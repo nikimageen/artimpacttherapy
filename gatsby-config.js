@@ -55,7 +55,6 @@ module.exports = {
       options: {
         name: `Art Impact Therapy`,
         short_name: `Art Impact`,
-        id: '/',
         start_url: `/`,
         background_color: `#2a2c2d`,
         theme_color: `#ffffff`,
