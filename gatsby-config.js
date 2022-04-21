@@ -36,16 +36,16 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful Starter",
-    description: "Official Contentful Gatsby Starter",
+    title: "Art Impact Therapy",
+    description: "Art Impact Therapy website",
   },
-  pathPrefix: "/gatsby-contentful-starter",
   plugins: [
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
+    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,

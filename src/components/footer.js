@@ -2,15 +2,21 @@ import React from 'react'
 
 import Container from './container'
 import * as styles from './footer.module.css'
+import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
-const Footer = () => (
-  <Container as="footer">
-    <div className={styles.container}>
-      Built with <a href="https://contentful.com/">Contentful</a> and{' '}
-      <a href="https://gatsbyjs.com">Gatsby</a> &middot;{' '}
-      <a href="https://github.com/contentful/starter-gatsby-blog">Source</a>
-    </div>
-  </Container>
-)
+const Footer = () => {
+  const { title } = useSiteMetadata()
+  
+  return (
+    <Container as="footer">
+      <div className={styles.container}>
+        <div>&#169; {title}</div>
+        <div>
+          <a href="https://benomatis.com" rel="noreferrer" target="_blank">benomatis.com</a>
+        </div>
+      </div>
+    </Container>
+  )
+}
 
 export default Footer

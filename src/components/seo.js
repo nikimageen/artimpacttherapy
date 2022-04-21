@@ -1,24 +1,14 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
 const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-      }
-    `
-  )
+  const siteMetadata = useSiteMetadata()
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || siteMetadata.description
+  const defaultTitle = siteMetadata?.title
 
+  // noinspection JSUnresolvedVariable
   return (
     <Helmet
       htmlAttributes={{
@@ -58,7 +48,7 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
+          content: siteMetadata?.social?.twitter || ``,
         },
         {
           name: `twitter:title`,
