@@ -50,5 +50,30 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Art Impact Therapy`,
+        short_name: `Art Impact`,
+        id: '/',
+        start_url: `/`,
+        background_color: `#2a2c2d`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+        icons: [
+          {
+            src: `/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`
+          },
+          {
+            src: `/android-chrome-384x384.png`,
+            sizes: `384x384`,
+            type: `image/png`
+          }
+        ],
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };
