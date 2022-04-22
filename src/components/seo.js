@@ -2,11 +2,11 @@ import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
-const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
+const Seo = ({ description = '', lang = 'hu', meta = [], title, image }) => {
   const { site } = useSiteMetadata()
 
   const metaDescription = description || site.description
-  const defaultTitle = site?.title
+  const defaultTitle = title || site?.title
 
   // noinspection JSUnresolvedVariable
   return (

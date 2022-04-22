@@ -1,17 +1,17 @@
 import React from 'react'
 
+import Seo from '../components/seo'
+import Landing from '../components/landing'
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
-import Landing from '../components/landing'
 
-const RootIndex = ({ location }) => {
-  return (
-    <>
-      <Landing />
-      <Navigation location={location} />
-      <Footer />
-    </>
-  )
-}
+const RootIndex = ({ location }) => (
+  <>
+    <Seo />
+    <Landing />
+    <Navigation location={location} />
+    <Footer />
+  </>
+)
 
 export default RootIndex
