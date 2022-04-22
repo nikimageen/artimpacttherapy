@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet'
 import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
 const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
-  const siteMetadata = useSiteMetadata()
+  const { site } = useSiteMetadata()
 
-  const metaDescription = description || siteMetadata.description
-  const defaultTitle = siteMetadata?.title
+  const metaDescription = description || site.description
+  const defaultTitle = site?.title
 
   // noinspection JSUnresolvedVariable
   return (
@@ -48,7 +48,7 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
         },
         {
           name: `twitter:creator`,
-          content: siteMetadata?.social?.twitter || ``,
+          content: site?.social?.twitter || ``,
         },
         {
           name: `twitter:title`,

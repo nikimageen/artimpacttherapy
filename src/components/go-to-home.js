@@ -5,7 +5,7 @@ import { useSiteMetadata } from '../hooks/useSiteMetadata'
 import * as styles from './go-to-home.module.css'
 
 const GoToHome = () => {
-  const { title } = useSiteMetadata()
+  const { site } = useSiteMetadata()
   
   return (
     <div className={styles.container}>
@@ -13,7 +13,7 @@ const GoToHome = () => {
           <span className={styles.logo}>
             <StaticImage src="../assets/images/logo.png" alt="Art Impact Therapy logo" />
           </span>
-        <span>{title}</span>
+        <span>{site.title}</span>
       </Link>
     </div>
   )

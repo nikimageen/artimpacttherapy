@@ -1,0 +1,14 @@
+.navigationItem {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navigationItem a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navigationItem a:hover {
+  color: var(--primary);
+}

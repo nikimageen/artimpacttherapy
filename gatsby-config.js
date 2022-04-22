@@ -43,7 +43,15 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          backgroundColor: `white`,
+          placeholder: `none`,
+        },
+      },
+    },
     "gatsby-plugin-image",
     `gatsby-plugin-gatsby-cloud`,
     {
