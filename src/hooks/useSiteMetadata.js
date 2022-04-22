@@ -10,10 +10,11 @@ export const useSiteMetadata = () => {
                     description
                 }
             }
-            allContentfulPage {
+            allContentfulPage(sort: {fields: orderId}) {
                 nodes {
                     title
                     slug
+                    orderId
                 }
             }
         }

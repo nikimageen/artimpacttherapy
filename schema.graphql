@@ -406,6 +406,7 @@ type ContentfulPage implements ContentfulEntry & ContentfulReference & Node {
     id: ID!
     internal: Internal!
     node_locale: String!
+    orderId: Int
     parent: Node
     publishDate(
         "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
@@ -420,7 +421,6 @@ type ContentfulPage implements ContentfulEntry & ContentfulReference & Node {
     slug: String
     spaceId: String
     sys: ContentfulPageSys
-    tags: [String]
     title: String
     updatedAt(
         "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
@@ -1151,7 +1151,7 @@ type Query {
     contentfulAsset(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, description: StringQueryOperatorInput, file: ContentfulAssetFileFilterInput, fixed: ContentfulFixedFilterInput, fluid: ContentfulFluidFilterInput, gatsbyImageData: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput, resize: ContentfulResizeFilterInput, spaceId: StringQueryOperatorInput, sys: ContentfulAssetSysFilterInput, title: StringQueryOperatorInput, updatedAt: DateQueryOperatorInput): ContentfulAsset
     contentfulContentType(children: NodeFilterListInput, description: StringQueryOperatorInput, displayField: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, parent: NodeFilterInput, sys: ContentfulContentTypeSysFilterInput): ContentfulContentType
     contentfulEntry(children: NodeFilterListInput, contentful_id: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput): ContentfulEntry
-    contentfulPage(author: ContentfulPersonFilterInput, body: contentfulPageBodyTextNodeFilterInput, childContentfulPageBodyTextNode: contentfulPageBodyTextNodeFilterInput, childContentfulPageDescriptionTextNode: contentfulPageDescriptionTextNodeFilterInput, children: NodeFilterListInput, childrenContentfulPageBodyTextNode: contentfulPageBodyTextNodeFilterListInput, childrenContentfulPageDescriptionTextNode: contentfulPageDescriptionTextNodeFilterListInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, description: contentfulPageDescriptionTextNodeFilterInput, heroImage: ContentfulAssetFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, node_locale: StringQueryOperatorInput, parent: NodeFilterInput, publishDate: DateQueryOperatorInput, slug: StringQueryOperatorInput, spaceId: StringQueryOperatorInput, sys: ContentfulPageSysFilterInput, tags: StringQueryOperatorInput, title: StringQueryOperatorInput, updatedAt: DateQueryOperatorInput): ContentfulPage
+    contentfulPage(author: ContentfulPersonFilterInput, body: contentfulPageBodyTextNodeFilterInput, childContentfulPageBodyTextNode: contentfulPageBodyTextNodeFilterInput, childContentfulPageDescriptionTextNode: contentfulPageDescriptionTextNodeFilterInput, children: NodeFilterListInput, childrenContentfulPageBodyTextNode: contentfulPageBodyTextNodeFilterListInput, childrenContentfulPageDescriptionTextNode: contentfulPageDescriptionTextNodeFilterListInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, description: contentfulPageDescriptionTextNodeFilterInput, heroImage: ContentfulAssetFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, node_locale: StringQueryOperatorInput, orderId: IntQueryOperatorInput, parent: NodeFilterInput, publishDate: DateQueryOperatorInput, slug: StringQueryOperatorInput, spaceId: StringQueryOperatorInput, sys: ContentfulPageSysFilterInput, title: StringQueryOperatorInput, updatedAt: DateQueryOperatorInput): ContentfulPage
     contentfulPageBodyTextNode(body: StringQueryOperatorInput, childMarkdownRemark: MarkdownRemarkFilterInput, children: NodeFilterListInput, childrenMarkdownRemark: MarkdownRemarkFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, sys: contentfulPageBodyTextNodeSysFilterInput): contentfulPageBodyTextNode
     contentfulPageDescriptionTextNode(childMarkdownRemark: MarkdownRemarkFilterInput, children: NodeFilterListInput, childrenMarkdownRemark: MarkdownRemarkFilterListInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, sys: contentfulPageDescriptionTextNodeSysFilterInput): contentfulPageDescriptionTextNode
     contentfulPerson(childContentfulPersonShortBioTextNode: contentfulPersonShortBioTextNodeFilterInput, children: NodeFilterListInput, childrenContentfulPersonShortBioTextNode: contentfulPersonShortBioTextNodeFilterListInput, company: StringQueryOperatorInput, contentful_id: StringQueryOperatorInput, createdAt: DateQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, node_locale: StringQueryOperatorInput, page: ContentfulPageFilterListInput, parent: NodeFilterInput, shortBio: contentfulPersonShortBioTextNodeFilterInput, spaceId: StringQueryOperatorInput, sys: ContentfulPersonSysFilterInput, title: StringQueryOperatorInput, updatedAt: DateQueryOperatorInput): ContentfulPerson
@@ -2080,6 +2080,7 @@ enum ContentfulPageFieldsEnum {
     author___page___internal___owner
     author___page___internal___type
     author___page___node_locale
+    author___page___orderId
     author___page___parent___children
     author___page___parent___id
     author___page___publishDate
@@ -2087,7 +2088,6 @@ enum ContentfulPageFieldsEnum {
     author___page___spaceId
     author___page___sys___revision
     author___page___sys___type
-    author___page___tags
     author___page___title
     author___page___updatedAt
     author___parent___children
@@ -2868,6 +2868,7 @@ enum ContentfulPageFieldsEnum {
     internal___owner
     internal___type
     node_locale
+    orderId
     parent___children
     parent___children___children
     parent___children___children___children
@@ -2914,7 +2915,6 @@ enum ContentfulPageFieldsEnum {
     sys___contentType___sys___type
     sys___revision
     sys___type
-    tags
     title
     updatedAt
 }
@@ -3207,10 +3207,10 @@ enum ContentfulPersonFieldsEnum {
     page___author___page___createdAt
     page___author___page___id
     page___author___page___node_locale
+    page___author___page___orderId
     page___author___page___publishDate
     page___author___page___slug
     page___author___page___spaceId
-    page___author___page___tags
     page___author___page___title
     page___author___page___updatedAt
     page___author___parent___children
@@ -3525,6 +3525,7 @@ enum ContentfulPersonFieldsEnum {
     page___internal___owner
     page___internal___type
     page___node_locale
+    page___orderId
     page___parent___children
     page___parent___children___children
     page___parent___children___id
@@ -3544,7 +3545,6 @@ enum ContentfulPersonFieldsEnum {
     page___spaceId
     page___sys___revision
     page___sys___type
-    page___tags
     page___title
     page___updatedAt
     parent___children
@@ -5672,12 +5672,12 @@ input ContentfulPageFilterInput {
     id: StringQueryOperatorInput
     internal: InternalFilterInput
     node_locale: StringQueryOperatorInput
+    orderId: IntQueryOperatorInput
     parent: NodeFilterInput
     publishDate: DateQueryOperatorInput
     slug: StringQueryOperatorInput
     spaceId: StringQueryOperatorInput
     sys: ContentfulPageSysFilterInput
-    tags: StringQueryOperatorInput
     title: StringQueryOperatorInput
     updatedAt: DateQueryOperatorInput
 }
