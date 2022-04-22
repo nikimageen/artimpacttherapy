@@ -6,17 +6,13 @@ import Seo from './seo'
 import Navigation from './navigation'
 import Footer from './footer'
 
-const Template = props => {
-  const { children } = props
+const Layout = ({ children, location }) => (
+  <>
+    <Seo />
+    <Navigation location={location} />
+    <main>{children}</main>
+    <Footer />
+  </>
+)
 
-  return (
-    <>
-      <Seo />
-      <Navigation />
-      <main>{children}</main>
-      <Footer />
-    </>
-  )
-}
-
-export default Template
+export default Layout

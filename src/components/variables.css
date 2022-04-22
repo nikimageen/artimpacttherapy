@@ -11,6 +11,7 @@
   /* palette */
   --white: #fff;
   --black: #000;
+  --dark-grey: #2a2c2d;
   --black-fade-5: rgba(0, 0, 0, 0.05);
 
   /* radii */
@@ -52,13 +53,15 @@
 
   /* tokens */
   /* colors */
-  --primary: #4a90e2;
+  --primary: #5b7a81;
   --background: var(--white);
+  --background-secondary: var(--dark-grey);
   --border: var(--black-fade-5);
 
   /* text */
   /* color */
   --text-color: var(--black);
+  --text-color-secondary: var(--white);
   /* size */
   --text-lead: var(--text-lg);
   --text-prose: var(--text-md);

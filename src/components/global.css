@@ -99,3 +99,8 @@ pre,
 code {
   font-family: var(--font-monospace);
 }
+
+main {
+  background-color: var(--background-secondary);
+  color: var(--text-color-secondary);
+}

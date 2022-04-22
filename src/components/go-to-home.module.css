@@ -1,0 +1,21 @@
+.container {
+  max-width: var(--size-max-width);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--size-gutter);
+}
+
+.logoLink {
+  color: var(--text-color);
+  display: flex;
+  font-weight: var(--medium);
+  align-items: center;
+  flex-direction: row;
+  flex-shrink: 0;
+  gap: var(--space-md);
+}
+
+.logo {
+  height: var(--size-logo);
+  width: var(--size-logo);
+  display: block;
+}

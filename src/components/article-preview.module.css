@@ -10,7 +10,7 @@
 .title {
   display: inline-block;
   font-size: var(--text-lg);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
   margin-top: var(--space-lg);
   border-bottom: 1.5px solid transparent;
 }
@@ -20,7 +20,7 @@
 }
 
 .link:hover .title {
-  border-bottom-color: var(--primary);
+  text-decoration: none;
 }
 
 .meta {
