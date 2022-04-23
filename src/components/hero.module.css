@@ -1,6 +1,4 @@
 .hero {
-  align-items: flex-end;
-  display: flex;
   margin: 0 auto;
   max-width: var(--size-max-width);
   min-height: 200px;
@@ -9,62 +7,107 @@
 }
 
 .image {
-  /*
-    Ensure golden ratio for the hero size while limiting it to some extend to
-    the viewport width
-  */
-  height: 61.8vh;
-  max-height: 560px;
-  width: 100%;
+  float: right;
+  height: 100%;
+  width: 33%;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }
 
-.details {
-  background: var(--background-secondary);
-  left: 0;
-  max-width: 40rem;
-  width: 85%;
-  padding: var(--space-2xl) var(--size-gutter) 0;
-  position: absolute;
+.article {
+  height: 100%;
+  max-height: 100%;
+  line-height: var(--loose);
+  padding-bottom: calc(var(--size-gutter) * 2);
 }
 
-.title {
-  font-size: var(--text-title);
-  font-weight: var(--extrabold);
-  line-height: var(--solid);
-  margin: 0 0 var(--space-xl);
+.body {
+  text-align: justify;
 }
 
-.content {
-  font-size: var(--text-lead);
+.article h2:first-of-type {
+  margin-top: 0;
+}
+
+.article a {
+  text-decoration: none;
+  font-weight: var(--medium);
+}
+
+.article a:hover {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.article p {
+  margin-bottom: 1.5em;
+  margin-top: 0;
+}
+
+.article h1,
+.article h2 {
+  font-size: var(--text-2xl);
+  margin-top: var(--space-3xl);
+}
+
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  font-size: var(--text-prose);
   font-weight: var(--semibold);
-  margin: 0;
+  margin-bottom: 0.5em;
+  margin-top: 3em;
 }
 
-@media (min-width: 480px) {
-  .details {
-    padding-top: var(--space-3xl);
+.article li {
+  margin-bottom: 0.5em;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    max-width: 80%;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  .image {
+    float: none;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding-top: var(--size-gutter);
+    max-width: var(--size-sm-max-width);
+  }
+  
+  .container {
+    max-width: var(--size-max-width);
+    margin: 50px auto 0;
   }
 
-  .details {
-    max-width: 44rem;
-    padding: var(--space-3xl) var(--size-gutter) 0;
+  .article {
+    gap: var(--space-xl);
   }
 }
 
 @media (min-width: 1024px) {
-  .image {
-    margin-left: auto;
-    width: 85%;
+  .hero {
+    max-width: var(--size-md-max-width);
+  }
+  
+  .article {
+    gap: var(--space-3xl);
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .details {
-    left: var(--size-gutter);
-    padding: var(--space-3xl) var(--size-gutter) 0 0;
+  .article ul {
+    padding-left: 0;
   }
 }

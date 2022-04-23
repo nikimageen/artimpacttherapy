@@ -17,20 +17,14 @@ const PageTemplate = props => {
         description={page.description.childMarkdownRemark.excerpt}
         image={`http:${page.heroImage.resize.src ?? null}`}
       />
+      <div className={styles.details}>
+        <h1 className={styles.title}>{page.title}</h1>
+      </div>
       <Hero
         image={page.heroImage?.gatsbyImageData ?? null}
         title={page.title}
+        body={page.body}
       />
-      <div className={styles.container}>
-        <div className={styles.article}>
-          <div
-            className={styles.body}
-            dangerouslySetInnerHTML={{
-              __html: page.body?.childMarkdownRemark?.html,
-            }}
-          />
-        </div>
-      </div>
     </Layout>
   )
 }
