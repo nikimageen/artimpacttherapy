@@ -12,3 +12,9 @@
 .navigationItem a:hover {
   color: var(--primary);
 }
+
+@media (max-width: 1024px) {
+  .navigationItem {
+    display: block;
+  }
+}
