@@ -47,7 +47,7 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          backgroundColor: `white`,
+          backgroundColor: `#F8F8F8`,
           placeholder: `none`,
         },
       },

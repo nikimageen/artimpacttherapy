@@ -4,7 +4,7 @@
   flex-direction: row;
 }
 
-.navigationItem a {
+.navigationItem a :not(.active) {
   color: var(--text-color);
   text-decoration: none;
 }
