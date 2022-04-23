@@ -8,6 +8,54 @@ const Seo = ({ description = '', lang = 'hu', meta = [], title, image }) => {
   const metaDescription = description || site.description
   const defaultTitle = title || site?.title
 
+  let metaProp = [
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary_large_image`,
+    },
+    {
+      name: `twitter:creator`,
+      content: site?.social?.twitter || ``,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+  ].concat(meta)
+
+  if (image) {
+    metaProp.push(
+      {
+        name: `image`,
+        content: image,
+      },
+      {
+        property: `og:image`,
+        content: image,
+      }
+    )
+  }
+
   // noinspection JSUnresolvedVariable
   return (
     <Helmet
@@ -17,48 +65,7 @@ const Seo = ({ description = '', lang = 'hu', meta = [], title, image }) => {
       title={title}
       defaultTitle={defaultTitle}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          name: `image`,
-          content: image,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content: image,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site?.social?.twitter || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      meta={metaProp}
     >
       <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
       <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />

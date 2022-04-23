@@ -15,12 +15,11 @@ const PageTemplate = props => {
       <Seo
         title={page.title}
         description={page.description.childMarkdownRemark.excerpt}
-        image={`http:${page.heroImage.resize.src}`}
+        image={`http:${page.heroImage.resize.src ?? null}`}
       />
       <Hero
-        image={page.heroImage?.gatsbyImageData}
+        image={page.heroImage?.gatsbyImageData ?? null}
         title={page.title}
-        content={page.description?.childMarkdownRemark?.excerpt}
       />
       <div className={styles.container}>
         <div className={styles.article}>

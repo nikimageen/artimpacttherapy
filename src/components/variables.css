@@ -52,8 +52,8 @@
 
   /* tokens */
   /* colors */
-  --primary: #BFDBDA;
-  --secondary: #B1B5B5;
+  --primary: #356566;
+  --secondary: #525252;
   --background: var(--white);
   --background-secondary: var(--black);
   --border: var(--black-fade-5);
