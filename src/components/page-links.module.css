@@ -9,8 +9,10 @@
   text-decoration: none;
 }
 
-.navigationItem a:hover {
-  color: var(--primary);
+@media (hover: hover) and (pointer: fine) {
+  .navigationItem a:hover {
+    color: var(--primary);
+  }
 }
 
 @media (max-width: 1024px) {
