@@ -1,23 +1,23 @@
-.container {
+.container, .container-main {
   font-size: var(--text-sm);
   padding: var(--space-2xl) 0;
   text-align: center;
   color: var(--text-color);
 }
 
-.container a {
+.container a, .container-main a {
   color: var(--text-color);
   text-decoration: none;
   font-weight: var(--medium);
 }
 
-.container a:hover {
+.container a:hover, .container-main a:hover {
   color: var(--primary);
   text-decoration: none;
 }
 
 @media (min-height: 668px) {
-  .container {
+  .container-main {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
