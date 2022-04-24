@@ -5,7 +5,7 @@ import * as styles from './landing.module.css'
 
 const Landing = () => (
   <div className={styles.container}>
-    <StaticImage src="../assets/images/logo.svg" alt="Art Impact Therapy logo" />
+    <StaticImage src="../assets/images/logo_with_text.svg" alt="Art Impact Therapy logo with text" />
   </div>
 )
 

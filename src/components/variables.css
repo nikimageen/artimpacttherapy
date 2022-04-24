@@ -22,6 +22,7 @@
   --space-lg: 16px;
   --space-xl: 20px;
   --space-2xl: 24px;
+  --space-25xl: 36px;
   --space-3xl: 48px;
 
   /* line-height */
@@ -71,7 +72,7 @@
 
   /* size */
   --size-gutter: var(--space-2xl);
-  --size-logo: var(--space-2xl);
+  --size-logo: var(--space-25xl);
   --size-max-width: 70rem;
   --size-md-max-width: 60rem;
   --size-sm-max-width: 48rem;

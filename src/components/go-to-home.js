@@ -10,10 +10,10 @@ const GoToHome = () => {
   return (
     <div className={styles.container}>
       <Link to="/" className={styles.logoLink}>
-          <span className={styles.logo}>
-            <StaticImage src="../assets/images/logo.png" alt="Art Impact Therapy logo" />
-          </span>
-        <span>{site.title}</span>
+        <span className={styles.logo}>
+          <StaticImage src="../assets/images/logo_no_text.svg" alt="Art Impact Therapy logo no text" />
+        </span>
+        <span className={styles.siteName}>{site.title}</span>
       </Link>
     </div>
   )
