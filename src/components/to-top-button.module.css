@@ -1,15 +1,24 @@
-.button {
+.wrapper {
     position: fixed;
-    text-align: center;
-    width: 28px;
-    height: 28px;
-    right: 4px;
+    width: 55px;
+    height: 55px;
+    right: 0;
     bottom: 32px;
-    font-size: 0.7rem;
     z-index: 1;
     cursor: pointer;
-    color: var(--text-color-secondary);
-    background-color: var(--background-secondary);
-    border: var(--text-color-secondary) solid 1px;
-    border-radius: 14px;
+    border: 0;
+    background: 0;
+}
+
+.fade-in {
+    transition: opacity 1s ease;
+    border: 0;
+    background: 0;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+    border: 0;
+    background: 0;
 }
