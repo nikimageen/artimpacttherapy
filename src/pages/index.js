@@ -10,7 +10,7 @@ const RootIndex = ({ location }) => (
     <Seo />
     <Landing />
     <Navigation location={location} />
-    <Footer />
+    <Footer location={location} />
   </>
 )
 
