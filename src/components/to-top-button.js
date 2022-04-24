@@ -7,7 +7,7 @@ const ToTopButton = ({ visible, scrollToTop }) => (
     onClick={scrollToTop}
     className={styles.button}
     style={{display: visible ? 'inline' : 'none'}}>
-    &#94;
+    fel
   </button>
 )
 

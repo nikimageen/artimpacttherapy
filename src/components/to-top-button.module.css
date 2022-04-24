@@ -1,16 +1,15 @@
 .button {
     position: fixed;
-    padding-right: 5px;
-    padding-top: 2px;
-    width: 25px;
-    height: 25px;
+    text-align: center;
+    width: 28px;
+    height: 28px;
     right: 4px;
     bottom: 32px;
-    font-size: 1.5rem;
+    font-size: 0.7rem;
     z-index: 1;
     cursor: pointer;
     color: var(--text-color-secondary);
     background-color: var(--background-secondary);
     border: var(--text-color-secondary) solid 1px;
-    border-radius: 20px;
+    border-radius: 14px;
 }
