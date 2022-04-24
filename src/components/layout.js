@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import './variables.css'
 import './global.css'
@@ -26,8 +26,15 @@ const Layout = ({ children, location }) => {
       behavior: 'smooth'
     });
   };
+  
+  useEffect(() => {
+    const isBrowser = typeof window !== "undefined"
+    
+    if (isBrowser) {
+      window.addEventListener('scroll', toggleVisible);
+    }
+  }, [])
 
-  window.addEventListener('scroll', toggleVisible);
   
   return (
     <>
