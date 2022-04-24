@@ -1,19 +1,31 @@
 @font-face {
-  font-family: 'Special Elite';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
+  font-family: 'Typewriter';
   /*noinspection CssUnknownTarget*/
-  src: url('/fonts/specialelite-regular-webfont.woff2?v=3.19') format('woff2');
+  src: url('/fonts/Typewriter.eot');
+  /*noinspection CssUnknownTarget*/
+  src: url('/fonts/Typewriter.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Typewriter.woff2') format('woff2'),
+  url('/fonts/Typewriter.woff') format('woff'),
+  url('/fonts/Typewriter.ttf') format('truetype'),
+  url('/fonts/Typewriter.svg#Typewriter') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Special Elite';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: italic;
+  font-family: 'Typewriter';
   /*noinspection CssUnknownTarget*/
-  src: url('/fonts/specialelite-regular-webfont.woff2?v=3.19') format('woff2');
+  src: url('/fonts/TypewriterBold.eot');
+  /*noinspection CssUnknownTarget*/
+  src: url('/fonts/TypewriterBold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/TypewriterBold.woff2') format('woff2'),
+  url('/fonts/TypewriterBold.woff') format('woff'),
+  url('/fonts/TypewriterBold.ttf') format('truetype'),
+  url('/fonts/TypewriterBold.svg#TypewriterBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 html {
